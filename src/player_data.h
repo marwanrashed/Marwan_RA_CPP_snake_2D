@@ -11,8 +11,22 @@ using namespace std;
 
 class Player {
     public:
+    // Default Constructor
     Player();
-
+    // Constructor with Arguments
+    Player (string, int, int);
+    // Destructor
+    ~Player();
+    // Copy Semantics
+        // Copy Constructor
+        Player (const Player &source);
+        // Copy assignment operator overloading
+        Player& operator= (const Player &source);
+    // Move Semantics
+        // Move constructor
+        Player (Player &&source);
+        // Move assignment operator overloading
+        Player& operator= (Player &&source);
     //Getters
     string GetName ()const;
     int GetScore ()const;
