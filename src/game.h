@@ -9,7 +9,7 @@
 
 class Game {
  public:
-  Game(std::size_t grid_width, std::size_t grid_height);
+  Game(std::size_t grid_width, std::size_t grid_height, bool change_level);
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
   int GetScore() const;
@@ -18,6 +18,7 @@ class Game {
  private:
   Snake snake;
   SDL_Point food;
+  SDL_Point obstacle;
 
   std::random_device dev;
   std::mt19937 engine;
@@ -26,6 +27,10 @@ class Game {
 
   int score{0};
 
+  bool _change_level;
+  
+
+  void PlaceObstacle();
   void PlaceFood();
   void Update();
 };

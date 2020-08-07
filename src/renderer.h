@@ -11,7 +11,7 @@ class Renderer {
            const std::size_t grid_width, const std::size_t grid_height, bool change_theme);
   ~Renderer();
 
-  virtual void Render(Snake const snake, SDL_Point const &food);
+  void Render(Snake const snake, SDL_Point const &food, SDL_Point const &obstacle, bool change_level);
   void UpdateWindowTitle(int score, int fps);
   //Getters
   std::size_t GetScreenWidth()const{return screen_width;}

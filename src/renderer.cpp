@@ -39,8 +39,9 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::Render(Snake const snake, SDL_Point const &food) {
+void Renderer::Render(Snake const snake, SDL_Point const &food, SDL_Point const &obstacle, bool change_level) {
   SDL_Rect block;
+  
   if (_change_theme == false){
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -54,6 +55,14 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
   block.x = food.x * block.w;
   block.y = food.y * block.h;
   SDL_RenderFillRect(sdl_renderer, &block);
+
+  // Render Obstacle
+  if (change_level){
+    SDL_SetRenderDrawColor(sdl_renderer, 165, 42, 42, 0xFF);
+    block.x = obstacle.x * block.w;
+    block.y = obstacle.y * block.h;
+    SDL_RenderFillRect(sdl_renderer, &block);
+  } 
 
   // Render snake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -77,7 +86,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
   SDL_RenderPresent(sdl_renderer);
   }
   else if (_change_theme){
-      block.w = screen_width / grid_width;
+  block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
 
   // Clear screen

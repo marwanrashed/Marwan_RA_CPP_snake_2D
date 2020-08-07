@@ -2,12 +2,15 @@
 #include <iostream>
 #include "SDL.h"
 
-Game::Game(std::size_t grid_width, std::size_t grid_height)
+Game::Game(std::size_t grid_width, std::size_t grid_height, bool change_level)
     : snake(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width)),
-      random_h(0, static_cast<int>(grid_height)) {
+      random_h(0, static_cast<int>(grid_height)),
+      _change_level(change_level) {
   PlaceFood();
+  if (_change_level)
+    PlaceObstacle();
 }
 
 void Game::Run(Controller const &controller, Renderer &renderer,
@@ -25,8 +28,9 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
     Update();
-    renderer.Render(snake, food);
 
+    renderer.Render(snake, food, obstacle, _change_level);
+      
     frame_end = SDL_GetTicks();
 
     // Keep track of how long each loop through the input/update/render cycle
@@ -65,11 +69,26 @@ void Game::PlaceFood() {
   }
 }
 
+void Game::PlaceObstacle() {
+  int x, y;
+  while (true) {
+    x = random_w(engine);
+    y = random_h(engine);
+    // Check that the location is not occupied by a snake item before placing
+    // food.
+    if (!snake.SnakeCell(x, y)) {
+      obstacle.x = x;
+      obstacle.y = y;
+      return;
+    }
+  }
+}
+
 void Game::Update() {
   if (!snake.alive) return;
 
   snake.Update();
-
+  bool flag = false;
   int new_x = static_cast<int>(snake.head_x);
   int new_y = static_cast<int>(snake.head_y);
 
@@ -80,6 +99,18 @@ void Game::Update() {
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += 0.02;
+
+    flag =true;
+  }
+  if (_change_level){
+      // Check if there's food over here
+  if (flag) {
+    PlaceObstacle();
+    // snake dies
+    if (obstacle.x == new_x && obstacle.y == new_y)
+      snake.alive = false;
+    flag = false;
+  }
   }
 }
 
