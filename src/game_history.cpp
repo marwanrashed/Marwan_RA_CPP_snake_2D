@@ -22,10 +22,32 @@
         }
         else
         {
-           std::cout << "ERROR: Requested file cannot be opened" << std::endl;
+           cout << "ERROR: Requested file cannot be opened" << endl;
         }
     }
-    vector<Player> History::ReadHistory (){}
+    vector<shared_ptr<Player>> History::ReadHistory (){
+        string line, name, time_stamp;
+        int score, level;
+        std::ifstream Hall_of_fame("Hall_of_fame.txt");
+        std::getline(Hall_of_fame, line);
+        std::istringstream linestream(line);
+        if (Hall_of_fame.is_open())
+        {
+            linestream >> name >> score >> level >> time_stamp; 
+            while (std::getline(Hall_of_fame, line))
+            {
+            if(linestream >> name >> score >> level >> time_stamp)
+            {
+                auto p = make_shared <Player> (&name,&score,&level,&time_stamp);
+                _players_history.emplace_back(p);
+            }
+            }
+            Hall_of_fame.close();
+            cout << "Hall of Fame file is Read Successfully" << endl;
+            return _players_history;
+    }
+    }
+    
     vector<Player> History::SortPlayers(){}
     void History::DisplayHistory(){}
     Player History::GetHighScore(){}
