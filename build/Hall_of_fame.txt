@@ -12,3 +12,9 @@ marwan 2 1
 maro 1 1
 baskotty 3 1
 baskotty 3 1
+Maro 0 1
+maro 0 1
+maro 0 1
+maro 1 1
+maro 2 1
+merro 10 1

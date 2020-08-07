@@ -32,7 +32,7 @@ int main() {
       player_name = profileManager.Input_string();
       player.SetName(player_name);
       player.SetLevel (Default_level);
-      Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+      Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight, false);
       Controller controller;
       Game game(kGridWidth, kGridHeight);
       game.Run(controller, renderer, kMsPerFrame);
@@ -46,7 +46,19 @@ int main() {
 
     }
     else if (Game_mode == profileManager.kTheme) {
-
+      profileManager.GetPlayerName();
+      player_name = profileManager.Input_string();
+      player.SetName(player_name);
+      player.SetLevel (Default_level);
+      Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight, true);
+      Controller controller;
+      Game game(kGridWidth, kGridHeight);
+      game.Run(controller, renderer, kMsPerFrame);
+      std::cout << "Game has terminated successfully!\n";
+      std::cout << "Score: " << game.GetScore() << "\n";
+      std::cout << "Size: " << game.GetSize() << "\n";
+      player.SetScore(game.GetScore());
+      history.SaveHistory(player);
     }
 
   }
