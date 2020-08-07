@@ -6,27 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/controller.cpp
-controller.h
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/controller.h
-iostream
--
-SDL.h
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/SDL.h
-snake.h
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/snake.h
-
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/controller.h
 snake.h
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/snake.h
-
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game.cpp
-game.h
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game.h
-iostream
--
-SDL.h
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/SDL.h
 
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game.h
 random
@@ -40,6 +22,32 @@ renderer.h
 snake.h
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/snake.h
 
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game_history.cpp
+game_history.h
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game_history.h
+
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game_history.h
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+sstream
+-
+algorithm
+-
+chrono
+-
+ctime
+-
+map
+-
+player_data.h
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/player_data.h
+
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/main.cpp
 iostream
 -
@@ -49,13 +57,29 @@ game.h
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game.h
 renderer.h
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/renderer.h
+game_history.h
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/game_history.h
+player_data.h
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/player_data.h
 
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/renderer.cpp
-renderer.h
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/renderer.h
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/player_data.cpp
+player_data.h
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/player_data.h
+
+/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/player_data.h
 iostream
 -
 string
+-
+vector
+-
+fstream
+-
+bits/stdc++.h
+-
+chrono
+-
+ctime
 -
 
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/renderer.h
@@ -65,14 +89,6 @@ SDL.h
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/SDL.h
 snake.h
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/snake.h
-
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/snake.cpp
-snake.h
-/home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/snake.h
-cmath
--
-iostream
--
 
 /home/maro/C++ Nanodegree/Capstone Project/Marwan_RA_CPP_Snake_2D/src/snake.h
 vector

@@ -1,7 +1,7 @@
 #include "game_history.h"
 
     // Default Constructor
-    // History ();
+    History::History () { cout << "Game Histroy instance is constructed" << endl;}
     // Methods
     void History::SaveHistory (Player& player){
         // Create output file stream
@@ -14,7 +14,7 @@
             Hall_of_fame << "Player_name" << " " << "Score" << " " << "Level" << " " << "Time_Stamp" << "\n";
             for (auto player_instance : _players_history) 
             {
-            Hall_of_fame << player_instance-> GetName() << " " << player_instance -> GetScore << " " 
+            Hall_of_fame << player_instance-> GetName() << " " << player_instance -> GetScore() << " " 
                     << player_instance -> GetLevel() << " " << player_instance -> GetTime()<< "\n";
             }
 

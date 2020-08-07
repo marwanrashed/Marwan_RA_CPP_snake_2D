@@ -196,6 +196,33 @@ src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
 
+src/game_history.o: src/game_history.cpp.o
+
+.PHONY : src/game_history.o
+
+# target to build an object file
+src/game_history.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game_history.cpp.o
+.PHONY : src/game_history.cpp.o
+
+src/game_history.i: src/game_history.cpp.i
+
+.PHONY : src/game_history.i
+
+# target to preprocess a source file
+src/game_history.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game_history.cpp.i
+.PHONY : src/game_history.cpp.i
+
+src/game_history.s: src/game_history.cpp.s
+
+.PHONY : src/game_history.s
+
+# target to generate assembly for a file
+src/game_history.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game_history.cpp.s
+.PHONY : src/game_history.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -222,6 +249,33 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/player_data.o: src/player_data.cpp.o
+
+.PHONY : src/player_data.o
+
+# target to build an object file
+src/player_data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/player_data.cpp.o
+.PHONY : src/player_data.cpp.o
+
+src/player_data.i: src/player_data.cpp.i
+
+.PHONY : src/player_data.i
+
+# target to preprocess a source file
+src/player_data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/player_data.cpp.i
+.PHONY : src/player_data.cpp.i
+
+src/player_data.s: src/player_data.cpp.s
+
+.PHONY : src/player_data.s
+
+# target to generate assembly for a file
+src/player_data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/player_data.cpp.s
+.PHONY : src/player_data.cpp.s
 
 src/renderer.o: src/renderer.cpp.o
 
@@ -292,9 +346,15 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/game_history.o"
+	@echo "... src/game_history.i"
+	@echo "... src/game_history.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/player_data.o"
+	@echo "... src/player_data.i"
+	@echo "... src/player_data.s"
 	@echo "... src/renderer.o"
 	@echo "... src/renderer.i"
 	@echo "... src/renderer.s"

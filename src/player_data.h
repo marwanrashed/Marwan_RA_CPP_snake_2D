@@ -31,7 +31,7 @@ class Player {
     string GetName ()const;
     int GetScore ()const;
     int GetLevel ()const;
-    string Player::GetTime()const;
+    string GetTime()const;
     //Setters
 
     void SetName( string *name);
@@ -40,7 +40,7 @@ class Player {
     void SetPlayTime ();
 
     // (>) operator overloading for player scores comparison
-    bool operator> (const Player&b); 
+    bool operator< (const Player&b); 
     private:
     string * _name;
     int * _score, * _level;

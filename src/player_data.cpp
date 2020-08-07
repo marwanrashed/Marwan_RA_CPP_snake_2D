@@ -6,33 +6,41 @@ Player::Player (string *name, int *score, int *level, string* time_stamp): _name
 Player::Player () {
     cout << "New Player is Constructed" << endl;
 }
+// Destructor
+Player::~Player() {
+        this->_name = nullptr;
+        this->_score = nullptr;
+        this->_level = nullptr;
+        this->_play_time = nullptr;
+    cout << "Player is destroyed now" << endl;
+}
 // Copy Constructor 
 Player::Player (const Player &source) {
     cout << "COPYING content of instance " << &source << " to instance " << this << endl;
-    _name = source._name;
-    _score = source._score;
-    _level = source._level;
-    _play_time = source._play_time;
+    this->_name = source._name;
+    this->_score = source._score;
+    this->_level = source._level;
+    this->_play_time = source._play_time;
 }
 // copy assignment overloading operator 
 Player& Player::operator= (const Player &source) {
     cout << "ASSIGNING content of instance " << &source << " to instance " << this << endl;
     if (this == &source)
         return *this;
-    _name = source._name;
-    _score = source._score;
-    _level = source._level;
-    _play_time = source._play_time;
+    this->_name = source._name;
+    this->_score = source._score;
+    this->_level = source._level;
+    this->_play_time = source._play_time;
     return *this;
 }
 // move constructor 
 Player::Player (Player &&source) {
     cout << "Moving instance: " << &source << "To instance: " << this << endl;
     // move data
-    _name = source._name;
-    _score = source._score;
-    _level = source._level;
-    _play_time = source._play_time;
+    this->_name = source._name;
+    this->_score = source._score;
+    this->_level = source._level;
+    this->_play_time = source._play_time;
     // delete original data
     source._name = nullptr;
     source._score = nullptr;
@@ -46,10 +54,10 @@ Player& Player::operator= (Player &&source) {
             return *this;
 
         // move data
-        _name = source._name;
-        _score = source._score;
-        _level = source._level;
-        _play_time = source._play_time;
+        this->_name = source._name;
+        this->_score = source._score;
+        this->_level = source._level;
+        this->_play_time = source._play_time;
 
         // delete original data
         source._name = nullptr;
@@ -61,11 +69,8 @@ Player& Player::operator= (Player &&source) {
 }
 
 // Overloading > Operator
-bool Player::operator> (const Player &b){
-    if (*(this->_score) > *(b._score) && *(this->_level) > *(b._level))
-        return true;
-    else
-        return false;
+bool Player::operator < (const Player &b){
+        return GetScore() > b.GetScore();
       
 } 
 
