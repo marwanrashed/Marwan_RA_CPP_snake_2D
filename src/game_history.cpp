@@ -43,15 +43,32 @@
     }
     }
 
-    void History::SortPlayers(){sort (_players_history.begin(),_players_history.end(),
-                [](const shared_ptr<Player>& a,const shared_ptr<Player>& b ){return a->GetScore() > b->GetScore();});}
+    vector<shared_ptr<Player>> History::SortPlayers(vector<shared_ptr<Player>> v){sort (v.begin(),v.end(),
+                [](const shared_ptr<Player>& a,const shared_ptr<Player>& b ){return a->GetScore() > b->GetScore();});
+                return v;}
 
     void History::DisplayHistory(){
         if (_players_history.size() >0){
-        for(int i =0; i < _players_history.size(); i++)
+        for(int i =0; i < _players_history.size(); ++i)
         {
             cout << "Player ("<<(i+1) << "). "<< _players_history[i]->GetName() << ", score: " << _players_history[i]->GetScore()
                  << ", level: " << _players_history[i]->GetLevel () << "."<< endl;
+        if (i == 9)
+            break;
+        }
+        }
+    else {
+        cout << "ERROR No data to display" << endl;
+    }
+    }
+    void History::DisplayOrdered (){
+        auto history_copy = _players_history;
+        history_copy = this->SortPlayers(history_copy);
+        if (history_copy.size() >0){
+        for(int i =0; i < history_copy.size(); i++)
+        {
+            cout << "Player ("<<(i+1) << "). "<< history_copy[i]->GetName() << ", score: " << history_copy[i]->GetScore()
+                 << ", level: " << history_copy[i]->GetLevel () << "."<< endl;
         if (i > 10)
           break;
   }
@@ -62,16 +79,19 @@
     }
 
 
+
     Player History::GetHighScore(){
-        this->SortPlayers();
-        auto tmp = _players_history.front ();
+        auto history_copy = _players_history;
+        history_copy = this->SortPlayers(history_copy);
+        auto tmp = history_copy.front ();
         auto highest_player = (*tmp.get());
         return highest_player;
     }
 
     Player History::GetLowestScore(){
-        this->SortPlayers();
-        auto tmp = _players_history.back();
+        auto history_copy = _players_history;
+        history_copy = this->SortPlayers(history_copy);
+        auto tmp = history_copy.back();
         auto lowest_player = (*tmp.get());
         return lowest_player; 
     }

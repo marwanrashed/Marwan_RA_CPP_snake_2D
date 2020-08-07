@@ -223,6 +223,33 @@ src/game_history.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game_history.cpp.s
 .PHONY : src/game_history.cpp.s
 
+src/game_settings.o: src/game_settings.cpp.o
+
+.PHONY : src/game_settings.o
+
+# target to build an object file
+src/game_settings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game_settings.cpp.o
+.PHONY : src/game_settings.cpp.o
+
+src/game_settings.i: src/game_settings.cpp.i
+
+.PHONY : src/game_settings.i
+
+# target to preprocess a source file
+src/game_settings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game_settings.cpp.i
+.PHONY : src/game_settings.cpp.i
+
+src/game_settings.s: src/game_settings.cpp.s
+
+.PHONY : src/game_settings.s
+
+# target to generate assembly for a file
+src/game_settings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/game_settings.cpp.s
+.PHONY : src/game_settings.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -349,6 +376,9 @@ help:
 	@echo "... src/game_history.o"
 	@echo "... src/game_history.i"
 	@echo "... src/game_history.s"
+	@echo "... src/game_settings.o"
+	@echo "... src/game_settings.i"
+	@echo "... src/game_settings.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
