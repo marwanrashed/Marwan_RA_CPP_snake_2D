@@ -20,9 +20,4 @@ class ProfileManager {
         enum MODE{kPlay = 1, kDisplay = 2, kUnordered = 3, kOrdered = 4, kHighest = 5, kLowest = 6, kDefault = 7 ,kDifficulty = 8, kTheme =9};
 };
 
-
-class GameModes : public Game {
-
-};
-
 #endif
