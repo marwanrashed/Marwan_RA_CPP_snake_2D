@@ -5,7 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <bits/stdc++.h>
+#include <algorithm>
 #include <chrono>
 #include <ctime> 
 #include<map>
@@ -19,11 +19,11 @@ class History {
     // Methods
     void SaveHistory (Player& player);
     vector<shared_ptr<Player>> ReadHistory ();
-    vector<Player> SortPlayers();
+    void SortPlayers();
     void DisplayHistory();
     Player GetHighScore();
     void DisplayHighScore();
-
+    
     private:
     
     vector <shared_ptr<Player>> _players_history;

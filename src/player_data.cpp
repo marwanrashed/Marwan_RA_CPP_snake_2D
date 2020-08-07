@@ -61,7 +61,7 @@ Player& Player::operator= (Player &&source) {
 }
 
 // Overloading > Operator
-bool Player::operator> (Player &b){
+bool Player::operator> (const Player &b){
     if (*(this->_score) > *(b._score) && *(this->_level) > *(b._level))
         return true;
     else

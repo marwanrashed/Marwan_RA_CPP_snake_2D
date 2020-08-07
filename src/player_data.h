@@ -40,7 +40,7 @@ class Player {
     void SetPlayTime ();
 
     // (>) operator overloading for player scores comparison
-    bool operator> (Player&b); 
+    bool operator> (const Player&b); 
     private:
     string * _name;
     int * _score, * _level;

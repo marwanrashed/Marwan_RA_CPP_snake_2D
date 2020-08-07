@@ -47,8 +47,19 @@
             return _players_history;
     }
     }
-    
-    vector<Player> History::SortPlayers(){}
-    void History::DisplayHistory(){}
+
+    void History::SortPlayers(){sort (_players_history.begin(),_players_history.end());}
+    void History::DisplayHistory(){
+        int i = 0;
+        this->SortPlayers();
+        for(auto player_instance : _players_history)
+        {
+            cout << "Player ("<<(i+1) << "). "<< player_instance->GetName() << ", score: " << player_instance ->GetScore()
+                 << ", level: " << player_instance->GetLevel () << ", date of play: "<< player_instance->GetTime()<< endl;
+        ++i;
+        if (i > 10)
+          break;
+  }
+    }
     Player History::GetHighScore(){}
     void History::DisplayHighScore(){}
