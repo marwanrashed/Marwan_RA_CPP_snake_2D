@@ -19,7 +19,7 @@ class History {
     // Methods
     void SaveHistory (Player& player);
     vector<shared_ptr<Player>> ReadHistory();
-    vector<shared_ptr<Player>> SortPlayers(vector<shared_ptr<Player>> v);
+    vector<shared_ptr<Player>> SortPlayers(vector<shared_ptr<Player>>& v);
     void DisplayHistory();
     void DisplayOrdered ();
     Player GetHighScore();

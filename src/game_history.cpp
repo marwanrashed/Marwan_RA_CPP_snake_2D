@@ -43,17 +43,17 @@
     }
     }
 
-    vector<shared_ptr<Player>> History::SortPlayers(vector<shared_ptr<Player>> v){sort (v.begin(),v.end(),
+    vector<shared_ptr<Player>> History::SortPlayers(vector<shared_ptr<Player>>& v){sort (v.begin(),v.end(),
                 [](const shared_ptr<Player>& a,const shared_ptr<Player>& b ){return a->GetScore() > b->GetScore();});
                 return v;}
 
     void History::DisplayHistory(){
         if (_players_history.size() >0){
-        for(int i =0; i < _players_history.size(); ++i)
+        for(int i =0; i < _players_history.size(); i++)
         {
             cout << "Player ("<<(i+1) << "). "<< _players_history[i]->GetName() << ", score: " << _players_history[i]->GetScore()
                  << ", level: " << _players_history[i]->GetLevel () << "."<< endl;
-        if (i == 9)
+        if (i > 9)
             break;
         }
         }
