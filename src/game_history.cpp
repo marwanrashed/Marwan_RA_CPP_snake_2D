@@ -61,5 +61,14 @@
           break;
   }
     }
-    Player History::GetHighScore(){}
-    void History::DisplayHighScore(){}
+    Player History::GetHighScore(){
+        this->SortPlayers();
+        auto tmp = _players_history.front ();
+        auto highest_player = (*tmp.get());
+        return highest_player;
+    }
+    void History::DisplayHighScore(){
+        auto highest_player = this->GetHighScore();
+        cout << "Highest Score Player :"<< highest_player.GetName() << ", score: " << highest_player.GetScore()
+                 << ", level: " << highest_player.GetLevel () << ", date of play: "<< highest_player.GetTime()<< endl; 
+    }
