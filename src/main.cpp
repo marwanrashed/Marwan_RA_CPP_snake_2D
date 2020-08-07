@@ -38,6 +38,7 @@ int main() {
         {
             history.DisplayHistory();
             history.DisplayHighScore();
+            history.DisplayLowScore();
         }
         else
         {

@@ -10,7 +10,7 @@ Player::Player () {
 }
 // Destructor
 Player::~Player() {
-    // cout << "Player is destroyed now" << endl;
+    //cout << "Player is destroyed now" << endl;
 }
 // Copy Constructor 
 Player::Player (const Player &source) {
@@ -70,13 +70,8 @@ bool Player::operator < (const Player &b){
 string Player::GetName()const{return _name;}
 int Player::GetScore()const {return _score;}
 int Player::GetLevel()const{return _level;}
-// string Player::GetTime()const{return (*_play_time);}
+
 //Setters
 void Player::SetName(string name) {this->_name = name;}
 void Player::SetScore(int score) {this->_score =score;}
 void Player::SetLevel (int level) {this-> _level = level;}
-// void Player::SetPlayTime () {
-//     auto current_time_stamp = chrono::system_clock::now();
-//     auto temp = chrono::system_clock::to_time_t(current_time_stamp);
-//     (*_play_time) = to_string(temp);
-// } 

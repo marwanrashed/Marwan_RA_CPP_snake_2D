@@ -22,7 +22,9 @@ class History {
     void SortPlayers();
     void DisplayHistory();
     Player GetHighScore();
+    Player GetLowestScore();
     void DisplayHighScore();
+    void DisplayLowScore();
     
     private:
     

@@ -45,8 +45,8 @@
 
     void History::SortPlayers(){sort (_players_history.begin(),_players_history.end(),
                 [](const shared_ptr<Player>& a,const shared_ptr<Player>& b ){return a->GetScore() > b->GetScore();});}
+
     void History::DisplayHistory(){
-        this->SortPlayers();
         if (_players_history.size() >0){
         for(int i =0; i < _players_history.size(); i++)
         {
@@ -60,14 +60,29 @@
         cout << "ERROR No data to display" << endl;
     }
     }
+
+
     Player History::GetHighScore(){
         this->SortPlayers();
         auto tmp = _players_history.front ();
         auto highest_player = (*tmp.get());
         return highest_player;
     }
+
+    Player History::GetLowestScore(){
+        this->SortPlayers();
+        auto tmp = _players_history.back();
+        auto lowest_player = (*tmp.get());
+        return lowest_player; 
+    }
     void History::DisplayHighScore(){
         auto highest_player = this->GetHighScore();
         cout << "Highest Score Player :"<< highest_player.GetName() << ", score: " << highest_player.GetScore()
                  << ", level: " << highest_player.GetLevel () << "."<< endl; 
+    }
+
+    void History::DisplayLowScore(){
+    auto lowest_player = this->GetLowestScore();
+    cout << "Lowest Score Player :"<< lowest_player.GetName() << ", score: " << lowest_player.GetScore()
+                << ", level: " << lowest_player.GetLevel () << "."<< endl; 
     }
