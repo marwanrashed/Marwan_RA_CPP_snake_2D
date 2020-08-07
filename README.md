@@ -80,19 +80,19 @@ The project accepts user input and processes the input. == Yes, this is demonstr
 ### Object Oriented Programming
 |Criteria| Addressed(Yes/No)|
 |--------|------------|
-The project uses Object Oriented Programming techniques. == Yes, all the functionalities/files are written using OOP techniques.
-Classes use appropriate access specifiers for class members. == Yes, all classes have their getters/setters when needed. for instance the Player class has GetName, SetName methods.
-Class constructors utilize member initialization lists. == Yes, it is shown in Player class and several other classes.
-Classes abstract implementation details from their interfaces.== Yes.
-Classes encapsulate behavior. == Yes, and this is represented by having all the functions belongong for a certain class to be defined in that class's `.h` file.
+The project uses Object Oriented Programming techniques. == Yes, all the functionalities/files are written using OOP techniques.|YES
+Classes use appropriate access specifiers for class members. == Yes, all classes have their getters/setters when needed. for instance the Player class has GetName, SetName methods.|YES
+Class constructors utilize member initialization lists. == Yes, it is shown in Player class and several other classes.|YES
+Classes abstract implementation details from their interfaces.== Yes.|YES
+Classes encapsulate behavior. == Yes, and this is represented by having all the functions belongong for a certain class to be defined in that class's `.h` file.|YES
 
 
 ### Memory Management
 |Criteria| Addressed(Yes/No)|
 |--------|------------|
-Classes abstract implementation details from their interfaces. == Yes.
-The project uses destructors appropriately. == Yes, and it is shown in the Player class.
-The project follows the Rule of 5. == Yes, and this is represented in the Player Class. 
-The project uses smart pointers instead of raw pointers. == Yes, this is described in the game_history.h file where shared pointers are used.
-The project uses move semantics to move data, instead of copying it, where possible. == Yes, the Player data moves from the source and pushed in the players vector.
+Classes abstract implementation details from their interfaces. == Yes. |YES
+The project uses destructors appropriately. == Yes, and it is shown in the Player class.|YES
+The project follows the Rule of 5. == Yes, and this is represented in the Player Class. |YES
+The project uses smart pointers instead of raw pointers. == Yes, this is described in the game_history.h file where shared pointers are used.|YES
+The project uses move semantics to move data, instead of copying it, where possible. == Yes, the Player data moves from the source and pushed in the players vector.|YES
 The project makes use of references in function declarations. == Yes. 
