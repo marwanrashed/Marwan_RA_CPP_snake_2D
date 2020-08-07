@@ -1,0 +1,7 @@
+marwan 6 1
+john 21 2
+Jack 15 1
+marwan 2 2
+walter 2 2
+mohamed 11 2
+kim 12 1

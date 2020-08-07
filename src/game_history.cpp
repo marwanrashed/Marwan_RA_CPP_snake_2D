@@ -11,13 +11,8 @@
         
         if (Hall_of_fame.is_open())
         {
-            Hall_of_fame << "Player_name" << " " << "Score" << " " << "Level" << " " << "Time_Stamp" << "\n";
-            for (auto player_instance : _players_history) 
-            {
-            Hall_of_fame << player_instance-> GetName() << " " << player_instance -> GetScore() << " " 
-                    << player_instance -> GetLevel() << " " << player_instance -> GetTime()<< "\n";
-            }
-
+            Hall_of_fame << player.GetName() << " " << player.GetScore() << " " 
+                    << player.GetLevel() << "\n";
             Hall_of_fame.close();            
         }
         else
@@ -26,20 +21,20 @@
         }
     }
     vector<shared_ptr<Player>> History::ReadHistory (){
-        string line, name, time_stamp;
+        string line, name;
         int score, level;
         std::ifstream Hall_of_fame("Hall_of_fame.txt");
-        std::getline(Hall_of_fame, line);
-        std::istringstream linestream(line);
+
         if (Hall_of_fame.is_open())
         {
-            linestream >> name >> score >> level >> time_stamp;
             while (std::getline(Hall_of_fame, line))
             {
-            if(linestream >> name >> score >> level >> time_stamp)
+            std::istringstream linestream(line);
+            if(linestream >> name >> score >> level)
             {
-                auto shared_player = make_shared <Player> (&name,&score,&level,&time_stamp);
-                _players_history.emplace_back(shared_player);
+                // Player P (name, score, level);
+                auto shared_player = make_shared <Player>(name, score, level);
+                _players_history.emplace_back(std::move(shared_player));
             }
             }
             Hall_of_fame.close();
@@ -48,18 +43,22 @@
     }
     }
 
-    void History::SortPlayers(){sort (_players_history.begin(),_players_history.end());}
+    void History::SortPlayers(){sort (_players_history.begin(),_players_history.end(),
+                [](const shared_ptr<Player>& a,const shared_ptr<Player>& b ){return a->GetScore() > b->GetScore();});}
     void History::DisplayHistory(){
-        int i = 0;
         this->SortPlayers();
-        for(auto player_instance : _players_history)
+        if (_players_history.size() >0){
+        for(int i =0; i < _players_history.size(); i++)
         {
-            cout << "Player ("<<(i+1) << "). "<< player_instance->GetName() << ", score: " << player_instance ->GetScore()
-                 << ", level: " << player_instance->GetLevel () << ", date of play: "<< player_instance->GetTime()<< endl;
-        ++i;
+            cout << "Player ("<<(i+1) << "). "<< _players_history[i]->GetName() << ", score: " << _players_history[i]->GetScore()
+                 << ", level: " << _players_history[i]->GetLevel () << "."<< endl;
         if (i > 10)
           break;
   }
+        }
+    else {
+        cout << "ERROR No data to display" << endl;
+    }
     }
     Player History::GetHighScore(){
         this->SortPlayers();
@@ -70,5 +69,5 @@
     void History::DisplayHighScore(){
         auto highest_player = this->GetHighScore();
         cout << "Highest Score Player :"<< highest_player.GetName() << ", score: " << highest_player.GetScore()
-                 << ", level: " << highest_player.GetLevel () << ", date of play: "<< highest_player.GetTime()<< endl; 
+                 << ", level: " << highest_player.GetLevel () << "."<< endl; 
     }

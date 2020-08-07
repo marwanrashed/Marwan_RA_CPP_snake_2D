@@ -14,7 +14,7 @@ class Player {
     // Default Constructor
     Player();
     // Constructor with Arguments
-     Player (string *, int*, int*, string*);
+     Player (string , int, int);
     // // Destructor
     ~Player();
     // Copy Semantics
@@ -31,20 +31,22 @@ class Player {
     string GetName ()const;
     int GetScore ()const;
     int GetLevel ()const;
-    string GetTime()const;
+    // string GetTime()const;
     //Setters
 
-    void SetName( string *name);
-    void SetScore (int *score);
-    void SetLevel (int *level);
-    void SetPlayTime ();
+    void SetName( string name);
+    void SetScore (int score);
+    void SetLevel (int level);
+    // void SetPlayTime ();
 
     // (>) operator overloading for player scores comparison
-    bool operator< (const Player&b); 
+    bool operator< (const Player &b); 
     private:
-    string * _name;
-    int * _score, * _level;
-    string *_play_time;
+    string _name;
+    int _score, _level;
+    // string * _name_handler;
+    // int * _score_handler, * _level_handler;
+    // string *_play_time;
 };
 
 #endif 
