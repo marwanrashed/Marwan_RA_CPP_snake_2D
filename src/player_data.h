@@ -14,7 +14,7 @@ class Player {
     // Default Constructor
     Player();
     // Constructor with Arguments
-     Player (string *, int*, int*);
+     Player (string *, int*, int*, string*);
     // // Destructor
     ~Player();
     // Copy Semantics
@@ -44,7 +44,7 @@ class Player {
     private:
     string * _name;
     int * _score, * _level;
-    std::time_t *_play_time;
+    string *_play_time;
 };
 
 #endif 

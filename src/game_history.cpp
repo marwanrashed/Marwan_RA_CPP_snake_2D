@@ -33,13 +33,13 @@
         std::istringstream linestream(line);
         if (Hall_of_fame.is_open())
         {
-            linestream >> name >> score >> level >> time_stamp; 
+            linestream >> name >> score >> level >> time_stamp;
             while (std::getline(Hall_of_fame, line))
             {
             if(linestream >> name >> score >> level >> time_stamp)
             {
-                auto p = make_shared <Player> (&name,&score,&level,&time_stamp);
-                _players_history.emplace_back(p);
+                auto shared_player = make_shared <Player> (&name,&score,&level,&time_stamp);
+                _players_history.emplace_back(shared_player);
             }
             }
             Hall_of_fame.close();
